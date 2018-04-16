@@ -5,7 +5,7 @@
     <body>
         <div id="demo">--</div>
         <form action="" method="GET">
-            <input type="text" id="num" placeholder="number to find"/>
+            <input type="text" id="num" placeholder="number to find" value="4"/>
             <input type="button" id="btn" value="Submit"/>
         </form>
     <script>
@@ -20,11 +20,18 @@
 			let max = Math.floor((ar.length));
 			let mid = Math.floor(max/2);
 			let out = document.getElementById("demo");
-			if(n == ar[mid]){
-				return out.innerHTML = "Success:" + max;
-            }else if(n < ar[mid]){
-				
-			}else{ return out.innerHTML = false; }
+			while(n != ar[mid]){
+				if(n == ar[mid]){
+					return out.innerHTML = "Success:" + ar[mid];
+				}else if(n < ar[mid]){
+					return out.innerHTML = (max = mid);
+					//return out.innerHTML = "small" + ar[mid];
+				}else if(n > ar[mid]){
+					min = mid;
+					return out.innerHTLM = (max = max - mid);
+					//return out.innerHTML = "big";
+				}else{ return out.innerHTML = false; }
+			}
         }           
 		
     </script>
