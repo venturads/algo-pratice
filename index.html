@@ -9,11 +9,24 @@
             <input type="button" id="btn" value="Submit"/>
         </form>
     <script>
-        const array = [1,2,3,5,7,9,11,13,17,19,23,27,29,31];
-        function getPrime(){
-            let out = document.getElementById("demo").innerHTML = array[0];    
+        const array = [1,2,3,5,7,9,11,13,17,19,23,27,29,31];	
+        document.getElementById("btn").addEventListener("click", function(){
+			let num = document.getElementById("num").value;
+				getPrime(array, num);
+			});
+		
+        function getPrime(ar, n){
+			let min = 1;
+			let max = Math.floor((ar.length));
+			let mid = Math.floor(max/2);
+			let out = document.getElementById("demo");
+			if(n == ar[mid]){
+				return out.innerHTML = "Success:" + max;
+            }else if(n < ar[mid]){
+				
+			}else{ return out.innerHTML = false; }
         }           
-        
+		
     </script>
     </body>
 </html>
