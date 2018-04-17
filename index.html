@@ -15,19 +15,20 @@
 				getPrime(array, num);
 			});
 		
-        function binarySearch(ar, left, right, key){
-				if(n == ar[mid]){
-					return out.innerHTML = "Success:" + ar[mid];
-				}else if(n < ar[mid]){
-					return out.innerHTML = (max = mid);
-					//return out.innerHTML = "small" + ar[mid];
-				}else if(n > ar[mid]){
-					min = mid;
-					return out.innerHTLM = (max = max - mid);
-					//return out.innerHTML = "big";
-				}else{ return out.innerHTML = false; }
-        }           
-		const array = [1,2,3,5,7,9,11,13,17,19,23,27,29,31];
+        function binarySearch(array, left, right, key) {
+			if (left > right) {
+				return -1;
+			}
+			var mid = Math.floor((left + right) / 2);
+			if (array[mid] == key) {
+				return mid;
+			}
+			if (array[mid] > key) {
+				return binarySearch(array, left, mid - 1, key);
+			}
+			return binarySearch(array, mid + 1, right, key);
+		}      
+		let array = [1,2,3,5,7,9,11,13,17,19,23,27,29,31];
 		let ans = binarySearch(array, 0, array.length-1,13);
 		if(ans == -1){
 			document.getElementById("display").innerHTML = ("Not found");
