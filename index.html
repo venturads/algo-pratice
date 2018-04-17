@@ -9,18 +9,13 @@
             <input type="button" id="btn" value="Submit"/>
         </form>
     <script>
-        const array = [1,2,3,5,7,9,11,13,17,19,23,27,29,31];	
+        	
         document.getElementById("btn").addEventListener("click", function(){
 			let num = document.getElementById("num").value;
 				getPrime(array, num);
 			});
 		
-        function getPrime(ar, n){
-			let min = 1;
-			let max = Math.floor((ar.length));
-			let mid = Math.floor(max/2);
-			let out = document.getElementById("demo");
-			while(n != ar[mid]){
+        function binarySearch(ar, left, right, key){
 				if(n == ar[mid]){
 					return out.innerHTML = "Success:" + ar[mid];
 				}else if(n < ar[mid]){
@@ -31,8 +26,9 @@
 					return out.innerHTLM = (max = max - mid);
 					//return out.innerHTML = "big";
 				}else{ return out.innerHTML = false; }
-			}
         }           
+		const array = [1,2,3,5,7,9,11,13,17,19,23,27,29,31];
+		let ans = binarySearch(array, 0, array.length-1,13);
 		
     </script>
     </body>
