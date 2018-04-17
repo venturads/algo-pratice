@@ -5,16 +5,10 @@
     <body>
         <div id="display">--</div>
         <form action="" method="GET">
-            <input type="text" id="num" placeholder="number to find" value="4"/>
+            <input type="text" id="num" placeholder="number to find"/>
             <input type="button" id="btn" value="Submit"/>
         </form>
     <script>
-        	
-        document.getElementById("btn").addEventListener("click", function(){
-			let num = document.getElementById("num").value;
-				getPrime(array, num);
-			});
-		
         function binarySearch(array, left, right, key) {
 			if (left > right) {
 				return -1;
@@ -28,12 +22,12 @@
 			}
 			return binarySearch(array, mid + 1, right, key);
 		}      
-		let array = [1,2,3,5,7,9,11,13,17,19,23,27,29,31];
-		let ans = binarySearch(array, 0, array.length-1,13);
-		if(ans == -1){
-			document.getElementById("display").innerHTML = ("Not found");
-		}else{
-			document.getElementById("display").innerHTML = ("Key at :" + ans);
+			let array = [1,2,3,5,7,9,11,13,17,19,23,27,29,31];
+			let ans = binarySearch(array, 0, array.length-1,27);
+			if(ans == -1){
+				document.getElementById("display").innerHTML = ("Not found");
+			}else{
+				document.getElementById("display").innerHTML = ("Key at :" + ans);
 			}
     </script>
     </body>
